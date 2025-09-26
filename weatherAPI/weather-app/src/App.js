@@ -1,4 +1,5 @@
 import './App.css';
+import { Button } from './components'; 
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
         <p>Get current weather information for any city</p>
       </header>
       <main className="App-main">
+        <Button className="click-button">
+          Test
+        </Button>
         {/* Search form will go here */}
         {/* Weather display will go here */}
       </main>
