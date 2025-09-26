@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+}
+
+.App-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
