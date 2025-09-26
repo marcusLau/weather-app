@@ -15,7 +15,7 @@ class WeatherService {
       throw new Error(ERROR_MESSAGES.API_KEY_ERROR);
     }
 
-    const url = `${this.baseUrl}/weather?q=${encodeURIComponent(cityName)}&appid=${this.apiKey}&units=metric`;
+    const url = `${this.baseUrl}/weather?q=${encodeURIComponent(cityName)}&appid=${this.apiKey}&units=imperial`;
 
     try {
       const controller = new AbortController();

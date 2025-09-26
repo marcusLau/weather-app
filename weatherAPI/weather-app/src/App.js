@@ -1,5 +1,5 @@
 import './App.css';
-import { Button } from './components';
+import { SearchForm, WeatherCard, LoadingSpinner } from './components';
 import { useState } from 'react';
 import { weatherService } from './services';
 
@@ -8,13 +8,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleTestClick = async () => {
+  const handleSearch = async (cityName) => {
     setLoading(true);
     setError(null);
     setWeatherData(null);
 
     try {
-      const data = await weatherService.fetchWeatherByCity("London");
+      const data = await weatherService.fetchWeatherByCity(cityName);
       setWeatherData(data);
       console.log('Weather data:', data);
     } catch (err) {
@@ -32,28 +32,22 @@ function App() {
         <p>Get current weather information for any city</p>
       </header>
       <main className="App-main">
-        <Button
-          className="click-button"
-          onClick={handleTestClick}
-          disabled={loading}
-        >
-          {loading ? "Loading..." : "Test"}
-        </Button>
+        <SearchForm onSearch={handleSearch} isLoading={loading} />
 
-        {/* TODO: Add conditional rendering here for different states: */}
-        {/* {loading && <LoadingSpinner />} */}
-        {/* {error && <div className="error-message">Error: {error}</div>} */}
-        {/* {weatherData && (
-          <div className="weather-info">
-            <h3>{weatherData.city}, {weatherData.country}</h3>
-            <p>Temperature: {weatherData.temperature}°C</p>
-            <p>Description: {weatherData.description}</p>
-            <img src={weatherData.iconUrl} alt={weatherData.description} />
+        {loading && (
+          <div className="loading-container">
+            <LoadingSpinner size="large" />
+            <p>Fetching weather data...</p>
           </div>
-        )} */}
+        )}
 
-        {/* Search form will go here */}
-        {/* Weather display will go here */}
+        {error && (
+          <div className="error-message">
+            <p>Error: {error}</p>
+          </div>
+        )}
+
+        {weatherData && <WeatherCard weatherData={weatherData} />}
       </main>
     </div>
   );
