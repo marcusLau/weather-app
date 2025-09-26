@@ -1,0 +1,260 @@
+# Weather App - Product Requirements Document (PRD)
+
+## Project Overview
+**Goal**: Build a simple weather lookup tool using React and OpenWeatherMap API to practice React fundamentals, component organization, and clean code structure.
+
+**Target Audience**: Learning React development with focus on best practices
+**Timeline**: Educational project (self-paced)
+**Tech Stack**: React 19, OpenWeatherMap API, CSS
+
+## Core Requirements
+
+### Functional Requirements
+1. **Weather Lookup**: Get current weather for any city
+2. **Display Information**: Show temperature, description, and weather icon
+3. **Error Handling**: Handle invalid city names gracefully
+4. **Loading States**: Show spinner while fetching data
+5. **Responsive Design**: Work on desktop and mobile
+
+### Technical Requirements
+1. **Component Organization**: Modular, reusable components
+2. **State Management**: React hooks (useState, useEffect)
+3. **API Integration**: Proper fetch() implementation with error handling
+4. **Code Structure**: Clean separation of concerns
+5. **Testing**: Basic unit tests for components
+
+## Development Tickets
+
+### Epic 1: Foundation & Setup
+**WA-001**: Project Structure Setup ✅ COMPLETED
+- Priority: High
+- Story Points: 2
+- Description: Organize project folders and files for scalability
+- Tasks:
+  ✅ Create components/ folder structure (ui/, weather/ subfolders)
+  ✅ Create services/ folder for API calls
+  ✅ Create utils/ folder for helper functions
+  ✅ Set up proper import/export patterns (index.js files)
+- Acceptance Criteria: ✅ ALL MET
+  - Clear folder structure with logical organization
+  - Index.js files for clean imports
+  - No deep nested folder paths
+
+**WA-002**: Base UI Components ✅ COMPLETED
+- Priority: High
+- Story Points: 3
+- Description: Create reusable UI building blocks
+- Tasks:
+  ✅ Button component with different variants (primary/secondary)
+  ✅ Input component with validation states (error handling)
+  ✅ Card component for layout
+  ✅ LoadingSpinner component (small/medium/large sizes)
+- Acceptance Criteria: ✅ ALL MET
+  - Components accept props for customization
+  - Consistent styling approach
+  - Clean CSS with hover states and transitions
+
+### Epic 2: Core Weather Functionality
+**WA-003**: Weather Service Module ✅ COMPLETED
+- Priority: High
+- Story Points: 3
+- Description: Create service layer for OpenWeatherMap API
+- Tasks:
+  ✅ Create weatherService.js module (singleton pattern)
+  ✅ Implement fetchWeatherByCity function (with timeout handling)
+  ✅ Add proper error handling and response parsing
+  ✅ Handle API rate limiting and comprehensive error scenarios
+- Acceptance Criteria: ✅ ALL MET
+  - Clean API abstraction with formatted data output
+  - Proper error responses (network, 404, timeout, API key)
+  - Environment variable integration for API key security
+
+**WA-004**: Search Form Component
+- Priority: High
+- Story Points: 2
+- Description: Input form for city search with validation
+- Tasks:
+  □ Create SearchForm component
+  □ Add input validation (non-empty, character limits)
+  □ Handle form submission
+  □ Prevent duplicate rapid requests
+- Acceptance Criteria:
+  - Input validation with user feedback
+  - Accessible form elements
+  - Handles edge cases (empty input, special characters)
+
+**WA-005**: Weather Display Component
+- Priority: High
+- Story Points: 3
+- Description: Display weather information in clean format
+- Tasks:
+  □ Create WeatherDisplay component
+  □ Format temperature display
+  □ Show weather description and icon
+  □ Handle different weather conditions
+- Acceptance Criteria:
+  - Clear, readable weather information
+  - Weather icons display correctly
+  - Temperature in Celsius/Fahrenheit
+
+### Epic 3: Error Handling & UX
+**WA-006**: Error Handling System
+- Priority: Medium
+- Story Points: 2
+- Description: Comprehensive error handling for better UX
+- Tasks:
+  □ Handle network errors
+  □ Handle invalid city responses
+  □ Handle API key issues
+  □ Create user-friendly error messages
+- Acceptance Criteria:
+  - Clear error messages for users
+  - No application crashes
+  - Graceful degradation
+
+**WA-007**: Loading States
+- Priority: Medium
+- Story Points: 1
+- Description: Show loading feedback during API calls
+- Tasks:
+  □ Implement loading state management
+  □ Show spinner during fetch
+  □ Disable form during loading
+  □ Handle loading timeouts
+- Acceptance Criteria:
+  - Visual loading feedback
+  - Form disabled during requests
+  - Reasonable timeout handling
+
+### Epic 4: Enhancement & Polish
+**WA-008**: Weather Icons Integration
+- Priority: Low
+- Story Points: 2
+- Description: Add visual weather icons for better UX
+- Tasks:
+  □ Integrate OpenWeatherMap icon system
+  □ Add fallback icons
+  □ Optimize icon loading
+- Acceptance Criteria:
+  - Icons match weather conditions
+  - Fast loading icons
+  - Accessible alt text
+
+**WA-009**: Responsive Design
+- Priority: Low
+- Story Points: 2
+- Description: Ensure app works on all device sizes
+- Tasks:
+  □ Mobile-first CSS approach
+  □ Test on different screen sizes
+  □ Optimize touch interactions
+- Acceptance Criteria:
+  - Works on mobile and desktop
+  - Touch-friendly interface
+  - No horizontal scrolling
+
+**WA-010**: Unit Testing
+- Priority: Low
+- Story Points: 3
+- Description: Add tests for components and services
+- Tasks:
+  □ Test weather service functions
+  □ Test component rendering
+  □ Test user interactions
+  □ Mock API calls in tests
+- Acceptance Criteria:
+  - >80% code coverage
+  - Tests pass consistently
+  - Mock external dependencies
+
+## Focus Areas for Learning
+
+### React Fundamentals
+- Component composition and reusability
+- Props vs state management
+- Event handling patterns
+- Conditional rendering
+- React hooks (useState, useEffect)
+
+### JavaScript Skills
+- Async/await and Promise handling
+- Fetch API and JSON parsing
+- Error handling with try/catch
+- ES6+ features (destructuring, arrow functions)
+- Module imports/exports
+
+### Code Organization
+- Separation of concerns (UI vs logic vs data)
+- Clean function naming and structure
+- Consistent code formatting
+- Proper commenting for learning
+
+## Progress Tracking
+
+### Status Legend
+□ Not Started
+🔄 In Progress
+✅ Complete
+❌ Blocked
+
+### Current Progress
+✅ WA-001: Project Structure Setup (Completed)
+✅ WA-002: Base UI Components (Completed)
+✅ WA-003: Weather Service Module (Completed)
+□ WA-004: Search Form Component
+□ WA-005: Weather Display Component
+□ WA-006: Error Handling System
+□ WA-007: Loading States
+□ WA-008: Weather Icons Integration
+□ WA-009: Responsive Design
+□ WA-010: Unit Testing
+
+### Notes Section
+- Date Started: September 26, 2025
+- Implementation Progress: 3/10 tickets completed (30%)
+- Next Sprint: Core weather functionality (WA-004, WA-005)
+
+### Completed Work Summary
+**WA-001 Implementation Notes:**
+- Created organized folder structure: components/ui/, components/weather/, services/, utils/
+- Set up clean import/export patterns with index.js files
+- Established scalable architecture foundation
+
+**WA-002 Implementation Notes:**
+- Button: Primary/secondary variants with hover states and disabled handling
+- Input: Error states with validation message display
+- Card: Clean layout component with consistent styling
+- LoadingSpinner: Multiple sizes (small/medium/large) with smooth animations
+
+**WA-003 Implementation Notes:**
+- WeatherService singleton with comprehensive error handling
+- Timeout management (10s) and request abortion
+- Proper error categorization (network, city not found, API key, timeout)
+- Data formatting and icon URL generation
+- Environment variable integration for API key
+
+### Key Learnings So Far
+- React component composition patterns
+- CSS module organization
+- Service layer abstraction
+- Error handling best practices
+- Environment configuration
+
+### Next Steps
+- Implement SearchForm component with input validation
+- Create WeatherDisplay component for formatted results
+- Integrate components in main App with state management
+
+## API Documentation Reference
+- OpenWeatherMap Current Weather API: https://openweathermap.org/current
+- API Key: Configured in .env file
+- Rate Limit: 60 calls/minute (free tier)
+- Response Format: JSON
+
+## Success Criteria
+✅ App successfully fetches and displays weather data
+✅ Proper error handling for edge cases
+✅ Clean, organized code structure
+✅ Responsive design works on mobile/desktop
+✅ Loading states provide good user feedback
+✅ Code demonstrates React best practices
